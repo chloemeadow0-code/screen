@@ -60,7 +60,7 @@ function makeServer() {
       const requestTime = new Date();
 
       // 3. 轮询等待（最多45秒，每3秒查一次）
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 40; i++) {
         await sleep(3000);
         const { data } = await supabase.from("snapshots")
           .select("*").order("taken_at", { ascending: false }).limit(1).single();
